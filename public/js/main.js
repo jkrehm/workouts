@@ -1,48 +1,48 @@
-require(['jquery', 'lodash', 'json!workouts.json', 'text!templates/workout.html'],
-function ($, _, workouts, tmplWorkout) {
+require(['jquery', 'lodash', 'json!workouts.json', 'text!templates/exercise.html'],
+function ($, _, workouts, tmplExercise) {
 
     'use strict';
 
     // Use mustache syntax
     _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
-    tmplWorkout = _.template(tmplWorkout);
+    tmplExercise = _.template(tmplExercise);
 
-    function setValue ($inputGroup) {
+    var $workouts = $('.workouts').empty();
+    var storedValues = JSON.parse(localStorage.getItem('workouts') || '{}');
 
-        var $input = $inputGroup.find('input');
-        var value = $input.val();
-        var $previous = $inputGroup.find('.prev-value');
-
-        localStorage.setItem($input.attr('name'), value);
-        $previous.text(value);
-        $input.val('');
-    }
-
-    var $workouts = $('.workouts');
-
+    // Loop through workouts and display
     _.each(workouts, function (workout) {
 
-        workout.key = workout.descr.replace(' ', '-').toLowerCase();
-        workout.value = localStorage.getItem(workout.key) || 0;
+        _.each(workout.workouts, function (exercise) {
 
-        var html = tmplWorkout(workout);
-        var $workout = $(html);
+            exercise.key = exercise.descr.replace(' ', '-').toLowerCase();
+            exercise.value = storedValues[exercise.key] || 0;
 
-        // Save weight on button click or enter pressed
-        $workout
-            .find('button')
-            .on('click', function () {
-                setValue($(this).closest('.input-group'));
+            var html = tmplExercise(exercise);
+            var $exercise = $(html);
+
+            // Save weight
+            $exercise.on('submit', function (e) {
+
+                e.preventDefault();
+
+                var $this = $(this);
+                var $input = $this.find('input');
+                var value = $input.val();
+                var $previous = $this.find('.prev-value');
+
+                // Store values
+                storedValues[exercise.key] = parseInt(value);
+                localStorage.setItem('workouts', JSON.stringify(storedValues));
+
+                // Reset page
+                $previous.text(value);
+                $input.val('');
+
+                return false;
             });
 
-        $workout
-            .find('input')
-            .on('keypress', function (e) {
-                if (e.keyCode === 13) {
-                    setValue($(this).closest('.input-group'));
-                }
-            });
-
-        $workouts.append($workout);
+            $workouts.append($exercise);
+        });
     });
 });
