@@ -1,0 +1,24 @@
+{
+  "name": "Workouts",
+  "version": "0.1.0",
+  "authors": [
+    "Jonathan Rehm <jkrehm@gmail.com>"
+  ],
+  "description": "Workout Descriptions & Tracking",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.2.0",
+    "requirejs": "~2.1.14",
+    "jquery": "1.11.1",
+    "lodash": "~2.4.1",
+    "requirejs-plugins": "~1.0.2"
+  }
+}

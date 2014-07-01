@@ -1,0 +1,18 @@
+<div class="workout">
+    <h3>{{ descr }}</h3>
+    <img src="{{ img }}" alt="{{ descr }}">
+    <div class="form-group">
+        <label>
+            <div class="sr-only">{{ descr }}</div>
+            <div class="input-group">
+                <span class="input-group-addon prev-value">{{ value }}</span>
+                <input type="number" class="form-control" name="{{ key }}" value="" placeholder="{{ descr }}">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </button>
+                </span>
+            </div>
+        </label>
+    </div>
+</div>

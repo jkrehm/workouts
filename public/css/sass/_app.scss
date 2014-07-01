@@ -1,0 +1,30 @@
+.workout {
+    @extend .col-md-4;
+    @extend .col-sm-6;
+    padding: 10px;
+    text-align: center;
+
+    &::after {
+        border: 1px solid #c5c5c5;
+        border-bottom-width: 4px;
+        border-right-width: 4px;
+        bottom: 10px;
+        content: " ";
+        left: 10px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: -1;
+    }
+
+    img {
+        height: 275px;
+        max-width: 350px;
+        margin: 15px auto;
+        width: 100%;
+    }
+    label {
+        margin: 5px auto;
+        width: 350px;
+    }
+}

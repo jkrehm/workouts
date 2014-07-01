@@ -1,0 +1,30 @@
+[
+    {
+        "img": "img/squats.svg",
+        "descr": "Squats"
+    },
+    {
+        "img": "img/incline-press.svg",
+        "descr": "Incline Press"
+    },
+    {
+        "img": "",
+        "descr": "One-arm Rows"
+    },
+    {
+        "img": "",
+        "descr": "Upright Rows"
+    },
+    {
+        "img": "",
+        "descr": "Semi-stiff-legged Deadlifts"
+    },
+    {
+        "img": "",
+        "descr": "Wrist Curls"
+    },
+    {
+        "img": "",
+        "descr": "Crunches"
+    }
+]
