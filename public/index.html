@@ -16,8 +16,23 @@
         <script src="vendor/requirejs/require.min.js" data-main="js/config"></script>
     </head>
     <body>
-        <div class="workouts">
-            <!-- Workouts displayed here -->
+        <div>
+            <select id="days">
+                <option value="Su">Sunday</option>
+                <option value="Mo">Monday</option>
+                <option value="Tu">Tuesday</option>
+                <option value="We">Wednesday</option>
+                <option value="Th">Thursday</option>
+                <option value="Fr">Friday</option>
+                <option value="Sa">Saturday</option>
+            </select>
+            <ul class="nav nav-tabs workouts" role="tablist">
+                <!-- Workouts displayed here -->
+            </ul>
+
+            <div class="tab-content exercises" role="panels">
+                <!-- Exercises displayed here -->
+            </div>
         </div>
     </body>
 </html>

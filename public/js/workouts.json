@@ -1,35 +1,151 @@
 [
     {
         "descr": "Lean",
+        "days": ["Mo", "We", "Fr"],
         "workouts": [
             {
                 "img": "img/squats.svg",
-                "descr": "Squats"
+                "descr": "Squats",
+                "reps": "4x10",
+                "days": "MoWeFr"
             },
             {
                 "img": "img/incline-press.svg",
-                "descr": "Incline Press"
+                "descr": "Incline Press",
+                "reps": "4x10",
+                "days": "MoWeFr"
             },
             {
                 "img": "img/bent-over-rows.svg",
-                "descr": "Bent-over Rows"
+                "descr": "Bent-over Rows",
+                "reps": "4x10",
+                "days": "MoWeFr"
             },
             {
                 "img": "img/upright-rows.svg",
-                "descr": "Upright Rows"
+                "descr": "Upright Rows",
+                "reps": "4x10",
+                "days": "MoWeFr"
             },
             {
                 "img": "img/semi-stiff-legged-deadlifts.svg",
-                "descr": "Semi-stiff-legged Deadlifts"
+                "descr": "Semi-stiff-legged Deadlifts",
+                "reps": "4x10",
+                "days": "MoWeFr"
             },
             {
                 "img": "img/wrist-curls.svg",
-                "descr": "Wrist Curls"
+                "descr": "Wrist Curls",
+                "reps": "4x10",
+                "days": "MoWeFr"
             },
             {
                 "img": "img/crunches.svg",
-                "descr": "Crunches"
+                "descr": "Crunches",
+                "reps": "4x10",
+                "days": "MoWeFr"
             }
         ]
+    },
+    {
+        "descr": "Shape",
+        "days": ["Mo", "We", "Fr"],
+        "workouts": [
+            {
+                "img": "img/squats.svg",
+                "descr": "Barbell/Dumbell Squats",
+                "reps": "4x10",
+                "days": "MoWe"
+            },
+            {
+                "img": "",
+                "descr": "Leg Extensions",
+                "reps": "3x10",
+                "days": "Mo"
+            },
+            {
+                "img": "",
+                "descr": "Semi-stiff-legged Deadlifts",
+                "reps": "4x10",
+                "days": "Mo"
+            },
+            {
+                "img": "",
+                "descr": "Leg Curls",
+                "reps": "3x10",
+                "days": "Mo"
+            },
+            {
+                "img": "",
+                "descr": "Bench Presses",
+                "reps": "4x10",
+                "days": "Mo"
+            },
+            {
+                "img": "",
+                "descr": "Flat-bench Flyes",
+                "reps": "3x10",
+                "days": "Mo"
+            },
+            {
+                "img": "",
+                "descr": "Pulldowns",
+                "reps": "4x10",
+                "days": "Mo"
+            },
+            {
+                "img": "",
+                "descr": "Machine Rows",
+                "reps": "3x10",
+                "days": "Mo"
+            },
+            {
+                "img": "img/upright-rows.svg",
+                "descr": "Dumbell Upright Rows",
+                "reps": "4x10",
+                "days": "MoWe"
+            },
+            {
+                "img": "img/standing-calf-raises.svg",
+                "descr": "Standing Calf Raises",
+                "reps": "4x10",
+                "days": "We"
+            },
+            {
+                "img": "img/concentration-curls.svg",
+                "descr": "Concentration Curls",
+                "reps": "4x10",
+                "days": "We"
+            },
+            {
+                "img": "img/tricep-pushdowns.svg",
+                "descr": "Tricep Pushdowns",
+                "reps": "",
+                "days": "We"
+            },
+            {
+                "img": "img/wrist-curls.svg",
+                "descr": "Wrist Curls (palms up)",
+                "reps": "3x10",
+                "days": "We"
+            },
+            {
+                "img": "img/flat-incline-kneeups.svg",
+                "descr": "Flat/Incline Kneeups",
+                "reps": "3x10",
+                "days": "We"
+            },
+            {
+                "img": "img/crunches.svg",
+                "descr": "Crunches",
+                "reps": "3x12",
+                "days": "We"
+            }
+        ]
+    },
+    {
+        "descr": "Build",
+        "days": ["Mo", "Tu", "We", "Fr"],
+        "workouts": []
     }
 ]
