@@ -1,5 +1,5 @@
-require(['jquery', 'lodash', 'json!workouts.json', 'text!templates/exercise.html', 'bootstrap'],
-function ($, _, workouts, tmplExercise) {
+require(['jquery', 'lodash', 'json!configuration.json', 'text!templates/exercise.html', 'bootstrap'],
+function ($, _, cfg, tmplExercise) {
 
     'use strict';
 
@@ -10,12 +10,14 @@ function ($, _, workouts, tmplExercise) {
     var $days = $('#days')
     var $workouts = $('.workouts');
     var $exercises = $('.exercises').empty();
-    var weights = JSON.parse(localStorage.getItem('workouts') || '{}');
+    var weights = JSON.parse(localStorage.getItem('workouts') || '{}'); // @fix Change how exercises are stored
     var defaultWorkout = JSON.parse(localStorage.getItem('default-workout'));
+    var today = new Date().getDay();
+        today = cfg.days[today].key;
 
 
     // Loop through workouts and display
-    _.each(workouts, function (workout, index) {
+    _.each(cfg.workouts, function (workout, index) {
 
         // Set key and default storage object, if it's empty
         workout.key = workout.descr.replace(' ', '-').toLowerCase();
@@ -59,10 +61,41 @@ function ($, _, workouts, tmplExercise) {
         }
 
 
+        // Build list of days
+        var $days = $('<select/>', {class : 'days'})
+            .appendTo($tabPane);
+
+        var todayExists = false;
+        _.each(workout.days, function (key) {
+            var day = _.find(cfg.days, {key : key});
+
+            var $day = $('<option/>')
+                .attr('value', day.key)
+                .text(day.descr)
+                .appendTo($days);
+
+            if (key === today) {
+                todayExists = true;
+            }
+        });
+
+        // Default to today (if it's one of the options)
+        if (todayExists) {
+            $days.val(today);
+        }
+
+        // Filter exercises by the day
+        $days.on('change', function () {
+            var day = $(this).val();
+
+            $('.workout').trigger('filter', [workout.key, day]);
+        });
+
+
         // Loop through exercises and display
         _.each(workout.workouts, function (exercise) {
 
-            exercise.key = exercise.descr.replace(' ', '-').toLowerCase();
+            exercise = _.extend({}, exercise, cfg.exercises[exercise.key]);
             exercise.value = weights[workout.key].workouts[exercise.key] || 0;
 
             var html = tmplExercise(exercise);
@@ -79,6 +112,7 @@ function ($, _, workouts, tmplExercise) {
                 var $previous = $this.find('.prev-value');
 
                 // Store values
+                // @fix Change how exercises are stored
                 weights[workout.key].workouts[exercise.key] = parseInt(value);
                 localStorage.setItem('workouts', JSON.stringify(weights));
 
@@ -89,36 +123,21 @@ function ($, _, workouts, tmplExercise) {
                 return false;
             });
 
+            // Show or hide
+            $exercise.on('filter', function (e, workoutKey, dayKey) {
+                if (workoutKey === workout.key) {
+                    var filter = (exercise.days.indexOf(dayKey) > -1);
+
+                    $(this).toggle(filter);
+                }
+            });
+
             $exercise.appendTo($tabPane);
         });
-    });
 
-    // Show/hide exercises based on selected day
-    function toggleDays (day) {
-        var day = $days.val();
-
-        $('[data-days]').each(function () {
-            var $this = $(this);
-            var showOrHide = $this.data('days').indexOf(day) > -1;
-
-            $this.toggle(showOrHide);
-        });
-    }
-
-
-    $(function () {
-
-        // Default the days select to today
-        (function () {
-            var days = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
-            var today = new Date().getDay();
-
-            $days.val(days[today]);
-            toggleDays();
-        })();
-
-        // Show/hide exercises based on selected day
-        $('#days').change(toggleDays);
-
+        // Default exercises to today (if it's one of the options)
+        if (todayExists) {
+            $('.workout').trigger('filter', [workout.key, today]);
+        }
     });
 });

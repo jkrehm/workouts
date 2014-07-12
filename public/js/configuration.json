@@ -1,0 +1,236 @@
+{
+    "exercises": {
+        "squats": {
+            "img": "img/squats.svg",
+            "descr": "Squats"
+        },
+        "incline-press": {
+            "img": "img/incline-press.svg",
+            "descr": "Incline Press"
+        },
+        "bent-over-rows": {
+            "img": "img/bent-over-rows.svg",
+            "descr": "Bent-over Rows"
+        },
+        "upright-rows": {
+            "img": "img/upright-rows.svg",
+            "descr": "Upright Rows"
+        },
+        "semi-stiff-legged-deadlifts": {
+            "img": "img/semi-stiff-legged-deadlifts.svg",
+            "descr": "Semi-stiff-legged Deadlifts"
+        },
+        "wrist-curls": {
+            "img": "img/wrist-curls.svg",
+            "descr": "Wrist Curls"
+        },
+        "crunches": {
+            "img": "img/crunches.svg",
+            "descr": "Crunches"
+        },
+        "leg-extensions": {
+            "img": "",
+            "descr": "Leg Extensions"
+        },
+        "leg-curls": {
+            "img": "",
+            "descr": "Leg Curls"
+        },
+        "bench-presses": {
+            "img": "",
+            "descr": "Bench Presses"
+        },
+        "flat-bench-flyes": {
+            "img": "",
+            "descr": "Flat-bench Flyes"
+        },
+        "pulldowns": {
+            "img": "",
+            "descr": "Pulldowns"
+        },
+        "machine-rows": {
+            "img": "",
+            "descr": "Machine Rows"
+        },
+        "standing-calf-raises": {
+            "img": "img/standing-calf-raises.svg",
+            "descr": "Standing Calf Raises"
+        },
+        "concentration-curls": {
+            "img": "img/concentration-curls.svg",
+            "descr": "Concentration Curls"
+        },
+        "tricep-pushdowns": {
+            "img": "img/tricep-pushdowns.svg",
+            "descr": "Tricep Pushdowns"
+        },
+        "flat-incline-kneeups": {
+            "img": "img/flat-incline-kneeups.svg",
+            "descr": "Flat/Incline Kneeups"
+        }
+    },
+    "workouts": [
+        {
+            "descr": "Lean",
+            "days": ["Mo", "We", "Fr"],
+            "workouts": [
+                {
+                    "key": "squats",
+                    "reps": "4x10",
+                    "days": "MoWeFr"
+                },
+                {
+                    "key": "incline-press",
+                    "reps": "4x10",
+                    "days": "MoWeFr"
+                },
+                {
+                    "key": "bent-over-rows",
+                    "reps": "4x10",
+                    "days": "MoWeFr"
+                },
+                {
+                    "key": "upright-rows",
+                    "reps": "4x10",
+                    "days": "MoWeFr"
+                },
+                {
+                    "key": "semi-stiff-legged-deadlifts",
+                    "reps": "4x10",
+                    "days": "MoWeFr"
+                },
+                {
+                    "key": "wrist-curls",
+                    "reps": "4x10",
+                    "days": "MoWeFr"
+                },
+                {
+                    "key": "crunches",
+                    "reps": "4x10",
+                    "days": "MoWeFr"
+                }
+            ]
+        },
+        {
+            "descr": "Shape",
+            "days": ["Mo", "We", "Fr"],
+            "workouts": [
+                {
+                    "key": "squats",
+                    "reps": "4x10",
+                    "days": "MoWeFr"
+                },
+                {
+                    "key": "leg-extensions",
+                    "reps": "3x10",
+                    "days": "MoFr"
+                },
+                {
+                    "key": "semi-stiff-legged-deadlifts",
+                    "reps": "4x10",
+                    "days": "Mo"
+                },
+                {
+                    "key": "leg-curls",
+                    "reps": "3x10",
+                    "days": "MoFr"
+                },
+                {
+                    "key": "bench-presses",
+                    "reps": "4x10",
+                    "days": "Mo"
+                },
+                {
+                    "key": "flat-bench-flyes",
+                    "reps": "3x10",
+                    "days": "MoFr"
+                },
+                {
+                    "key": "pulldowns",
+                    "reps": "4x10",
+                    "days": "MoFr"
+                },
+                {
+                    "key": "machine-rows",
+                    "reps": "3x10",
+                    "days": "MoFr"
+                },
+                {
+                    "key": "upright-rows",
+                    "reps": "4x10",
+                    "days": "MoWeFr"
+                },
+                {
+                    "key": "standing-calf-raises",
+                    "reps": "4x10",
+                    "days": "WeFr"
+                },
+                {
+                    "key": "concentration-curls",
+                    "reps": "4x10",
+                    "days": "We"
+                },
+                {
+                    "key": "tricep-pushdowns",
+                    "reps": "4x10",
+                    "days": "We"
+                },
+                {
+                    "key": "wrist-curls",
+                    "reps": "3x10",
+                    "days": "We"
+                },
+                {
+                    "key": "flat-incline-kneeups",
+                    "reps": "3x10",
+                    "days": "We"
+                },
+                {
+                    "key": "crunches",
+                    "reps": "3x12",
+                    "days": "We"
+                },
+                {
+                    "key": "incline-press",
+                    "reps": "4x10",
+                    "days": "Fr"
+                }
+            ]
+        },
+        {
+            "descr": "Build",
+            "days": ["Mo", "Tu", "We", "Fr"],
+            "workouts": []
+        }
+    ],
+    "days": [
+        {
+            "key": "Su",
+            "descr": "Sunday"
+        },
+        {
+            "key": "Mo",
+            "descr": "Monday"
+        },
+        {
+            "key": "Tu",
+            "descr": "Tuesday"
+        },
+        {
+            "key": "We",
+            "descr": "Wednesday"
+        },
+        {
+            "key": "Th",
+            "descr": "Thursday"
+        },
+        {
+            "key": "Fr",
+            "descr": "Friday"
+        },
+        {
+            "key": "Sa",
+            "descr": "Saturday"
+        }
+    ]
+}
