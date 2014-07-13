@@ -1,72 +1,72 @@
 {
     "exercises": {
-        "squats": {
-            "img": "img/squats.svg",
-            "descr": "Squats"
-        },
-        "incline-press": {
-            "img": "img/incline-press.svg",
-            "descr": "Incline Press"
+        "bench-presses": {
+            "img": "img/bench-presses.svg",
+            "descr": "Bench Presses"
         },
         "bent-over-rows": {
             "img": "img/bent-over-rows.svg",
             "descr": "Bent-over Rows"
         },
-        "upright-rows": {
-            "img": "img/upright-rows.svg",
-            "descr": "Upright Rows"
-        },
-        "semi-stiff-legged-deadlifts": {
-            "img": "img/semi-stiff-legged-deadlifts.svg",
-            "descr": "Semi-stiff-legged Deadlifts"
-        },
-        "wrist-curls": {
-            "img": "img/wrist-curls.svg",
-            "descr": "Wrist Curls"
+        "concentration-curls": {
+            "img": "img/concentration-curls.svg",
+            "descr": "Concentration Curls"
         },
         "crunches": {
             "img": "img/crunches.svg",
             "descr": "Crunches"
         },
-        "leg-extensions": {
-            "img": "",
-            "descr": "Leg Extensions"
-        },
-        "leg-curls": {
-            "img": "",
-            "descr": "Leg Curls"
-        },
-        "bench-presses": {
-            "img": "",
-            "descr": "Bench Presses"
+        "incline-press": {
+            "img": "img/incline-press.svg",
+            "descr": "Incline Press"
         },
         "flat-bench-flyes": {
-            "img": "",
+            "img": "img/flat-bench-flyes.svg",
             "descr": "Flat-bench Flyes"
         },
-        "pulldowns": {
-            "img": "",
-            "descr": "Pulldowns"
+        "flat-incline-kneeups": {
+            "img": "img/flat-incline-kneeups.svg",
+            "descr": "Flat/Incline Kneeups"
+        },
+        "leg-curls": {
+            "img": "img/leg-curls.svg",
+            "descr": "Leg Curls"
+        },
+        "leg-extensions": {
+            "img": "img/leg-extensions.svg",
+            "descr": "Leg Extensions"
         },
         "machine-rows": {
-            "img": "",
+            "img": "img/machine-rows.svg",
             "descr": "Machine Rows"
+        },
+        "pulldowns": {
+            "img": "img/pulldowns.svg",
+            "descr": "Pulldowns"
+        },
+        "semi-stiff-legged-deadlifts": {
+            "img": "img/semi-stiff-legged-deadlifts.svg",
+            "descr": "Semi-stiff-legged Deadlifts"
+        },
+        "squats": {
+            "img": "img/squats.svg",
+            "descr": "Squats"
         },
         "standing-calf-raises": {
             "img": "img/standing-calf-raises.svg",
             "descr": "Standing Calf Raises"
         },
-        "concentration-curls": {
-            "img": "img/concentration-curls.svg",
-            "descr": "Concentration Curls"
-        },
         "tricep-pushdowns": {
             "img": "img/tricep-pushdowns.svg",
             "descr": "Tricep Pushdowns"
         },
-        "flat-incline-kneeups": {
-            "img": "img/flat-incline-kneeups.svg",
-            "descr": "Flat/Incline Kneeups"
+        "upright-rows": {
+            "img": "img/upright-rows.svg",
+            "descr": "Upright Rows"
+        },
+        "wrist-curls": {
+            "img": "img/wrist-curls.svg",
+            "descr": "Wrist Curls"
         }
     },
     "workouts": [
