@@ -6,6 +6,17 @@ require.config({
             '../vendor/bootstrap/dist/bootstrap.min',
             '../vendor/bootstrap/dist/bootstrap',
         ],
+        'bootstrap-select' : [
+            '//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.5.4/bootstrap-select.min',
+            '../vendor/bootstrap-select/bootstrap-select.min',
+            '../vendor/bootstrap-select/bootstrap-select',
+        ],
+        'detectmobilebrowser' : [
+            '../vendor/detectmobilebrowser/detectmobilebrowser',
+        ],
+        'dropbox' : [
+            'https://www.dropbox.com/static/api/dropbox-datastores-1.1-latest',
+        ],
         'jquery' : [
             '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min',
             '../vendor/jquery/dist/jquery.min',
@@ -27,6 +38,12 @@ require.config({
     },
     shim: {
         'bootstrap' : {
+            deps : ['jquery'],
+        },
+        'bootstrap-select' : {
+            deps : ['jquery', 'bootstrap'],
+        },
+        'detectmobilebrowser' : {
             deps : ['jquery'],
         },
     },

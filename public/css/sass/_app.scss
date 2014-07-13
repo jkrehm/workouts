@@ -1,7 +1,11 @@
+.tab-pane {
+    @extend .clearfix;
+    padding: 10px;
+}
 .workout {
     @extend .col-md-4;
     @extend .col-sm-6;
-    padding: 10px;
+    padding: 15px 10px;
     text-align: center;
 
     &::after {
@@ -28,7 +32,14 @@
         max-width: 350px;
         width: 90%;
     }
+    .form-group {
+        margin-bottom: 0;
+    }
 }
 .days {
-    display: block;
+    &.bootstrap-select.btn-group:not(.input-group-btn) {
+        display: block;
+        min-height: 34px;
+        margin: 0 0 0 10px;
+    }
 }

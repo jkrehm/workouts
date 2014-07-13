@@ -1,0 +1,1 @@
+define(['bootstrap', 'bootstrap-select', 'detectmobilebrowser']);

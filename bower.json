@@ -15,7 +15,10 @@
     "tests"
   ],
   "dependencies": {
+    "bootstrap": "~3.2.0",
     "bootstrap-sass-official": "~3.2.0",
+    "bootstrap-select": "~1.5.4",
+    "detectmobilebrowser": "http://detectmobilebrowsers.com/download/jquery",
     "requirejs": "~2.1.14",
     "jquery": "1.11.1",
     "lodash": "~2.4.1",

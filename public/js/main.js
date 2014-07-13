@@ -1,4 +1,4 @@
-require(['jquery', 'lodash', 'json!configuration.json', 'text!templates/exercise.html', 'bootstrap'],
+require(['jquery', 'lodash', 'json!configuration.json', 'text!templates/exercise.html', 'plugins'],
 function ($, _, cfg, tmplExercise) {
 
     'use strict';
@@ -7,10 +7,9 @@ function ($, _, cfg, tmplExercise) {
     _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
     tmplExercise = _.template(tmplExercise);
 
-    var $days = $('#days')
     var $workouts = $('.workouts');
     var $exercises = $('.exercises').empty();
-    var weights = JSON.parse(localStorage.getItem('workouts') || '{}'); // @fix Change how exercises are stored
+    var poundage = JSON.parse(localStorage.getItem('poundage') || '{}');
     var defaultWorkout = JSON.parse(localStorage.getItem('default-workout'));
     var today = new Date().getDay();
         today = cfg.days[today].key;
@@ -22,14 +21,6 @@ function ($, _, cfg, tmplExercise) {
         // Set key and default storage object, if it's empty
         workout.key = workout.descr.replace(' ', '-').toLowerCase();
 
-        if (typeof weights[workout.key] === 'undefined') {
-            weights[workout.key] = {
-                default  : false,
-                workouts : {},
-            };
-        }
-
-
         // Build tab list
         var $tabWrapper = $('<li/>')
             .appendTo($workouts);
@@ -40,10 +31,10 @@ function ($, _, cfg, tmplExercise) {
                 'data-toggle' : 'tab',
             })
             .text(workout.descr)
-            .appendTo($tabWrapper)
+            .appendTo($tabWrapper);
 
             // Set new default tab
-            .on('shown.bs.tab', function () {
+        $tab.on('shown.bs.tab', function () {
                 localStorage.setItem('default-workout', JSON.stringify(workout.key));
             });
 
@@ -69,7 +60,7 @@ function ($, _, cfg, tmplExercise) {
         _.each(workout.days, function (key) {
             var day = _.find(cfg.days, {key : key});
 
-            var $day = $('<option/>')
+            $('<option/>')
                 .attr('value', day.key)
                 .text(day.descr)
                 .appendTo($days);
@@ -91,12 +82,27 @@ function ($, _, cfg, tmplExercise) {
             $('.workout').trigger('filter', [workout.key, day]);
         });
 
+        // Beautify the select
+        $days.selectpicker({
+            mobile : $.browser.mobile
+        });
+
+        // Use the native select menu if on a mobile device
+        // @todo Remove when pull-request goes through
+        if ($.browser.mobile) {
+            $days.selectpicker('mobile');
+        }
+
 
         // Loop through exercises and display
         _.each(workout.workouts, function (exercise) {
 
-            exercise = _.extend({}, exercise, cfg.exercises[exercise.key]);
-            exercise.value = weights[workout.key].workouts[exercise.key] || 0;
+            var poundageKey = exercise.key + 'x' + exercise.reps;
+
+            exercise = _.extend({}, exercise, cfg.exercises[exercise.key], {
+                value : poundage[poundageKey] || 0,
+                id    : poundageKey,
+            });
 
             var html = tmplExercise(exercise);
             var $exercise = $(html);
@@ -106,19 +112,16 @@ function ($, _, cfg, tmplExercise) {
 
                 e.preventDefault();
 
-                var $this = $(this);
-                var $input = $this.find('input');
+                var $input = $(this).find('input');
                 var value = $input.val();
-                var $previous = $this.find('.prev-value');
+
+                // Show value & eset page
+                $('#' + exercise.id).find('.prev-value').text(value);
+                $input.val('');
 
                 // Store values
-                // @fix Change how exercises are stored
-                weights[workout.key].workouts[exercise.key] = parseInt(value);
-                localStorage.setItem('workouts', JSON.stringify(weights));
-
-                // Reset page
-                $previous.text(value);
-                $input.val('');
+                poundage[poundageKey] = parseInt(value);
+                localStorage.setItem('poundage', JSON.stringify(poundage));
 
                 return false;
             });
