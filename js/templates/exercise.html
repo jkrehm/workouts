@@ -1,0 +1,20 @@
+<form class="workout" id="{{ id }}">
+    <h3>{{ descr }}</h3>
+    <img src="{{ img }}" alt="{{ descr }}">
+    <div class="form-group">
+        <label>
+            <div class="sr-only">Weight</div>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="prev-value">{{ value }}</span> lb.
+                </span>
+                <input type="number" class="form-control" name="{{ key }}" value="" placeholder="Weight">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-success">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </button>
+                </span>
+            </div>
+        </label>
+    </div>
+</form>
