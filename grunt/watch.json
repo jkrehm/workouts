@@ -1,0 +1,18 @@
+{
+    "grunt": {
+        "files": ["Gruntfile.js", "grunt/*"]
+    },
+    "sass": {
+        "files": ["public/css/sass/**/*.scss"],
+        "tasks": ["sass:dev"]
+    },
+    "livereload": {
+        "options": {"livereload": true},
+        "files": [
+            "public/**/*.html",
+            "public/css/**/*.css",
+            "public/js/**/*.js",
+            "public/js/**/*.json"
+        ]
+    }
+}

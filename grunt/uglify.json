@@ -1,0 +1,18 @@
+{
+    "options": {
+        "mangle": false,
+        "preserveComments": "some"
+    },
+    "dev": {
+        "files": [
+            {"public/vendor/requirejs/require.min.js"          : ["public/vendor/requirejs/require.js"]},
+            {"public/vendor/requirejs-plugins/src/json.min.js" : ["public/vendor/requirejs-plugins/src/json.js"]},
+            {"public/vendor/requirejs-plugins/lib/text.min.js" : ["public/vendor/requirejs-plugins/lib/text.js"]}
+        ]
+    },
+    "dist": {
+        "files": [
+            {"public/vendor/requirejs/require.min.js" : ["public/vendor/requirejs/require.js"]}
+        ]
+    }
+}

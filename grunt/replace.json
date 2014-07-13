@@ -1,0 +1,20 @@
+{
+    "detectmobilebrowser": {
+        "options": {
+            "patterns": [
+                {
+                    "_comment": "Add tablets",
+                    "match": "/xiino\/i/g",
+                    "replacement": "xiino|android|ipad|playbook|silk/i",
+                    "expression": true
+                }
+            ]
+        },
+        "files": [
+            {
+                "src": ["public/vendor/detectmobilebrowser/detectmobilebrowser.js"],
+                "dest": "public/vendor/detectmobilebrowser/detectmobilebrowser.js"
+            }
+        ]
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "cssAsScss": {
+        "files": [
+            {
+                "expand": true,
+                "cwd": "public/vendor",
+                "src": ["**/*.css", "!**/*.min.css"],
+                "dest": "public/vendor",
+                "filter": "isFile",
+                "ext": ".scss"
+            }
+        ]
+    },
+    "detectmobilebrowser": {
+        "files": [
+            {
+                "src": ["public/vendor/detectmobilebrowser/index.txt"],
+                "dest": "public/vendor/detectmobilebrowser/detectmobilebrowser.js"
+            }
+        ]
+    }
+}

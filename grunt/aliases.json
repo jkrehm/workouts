@@ -1,0 +1,15 @@
+{
+    "default": [
+        "watch"
+    ],
+    "detectmobilebrowser": [
+        "copy:detectmobilebrowser",
+        "replace:detectmobilebrowser"
+    ],
+    "bower": [
+        "newer:copy:cssAsScss",
+        "detectmobilebrowser",
+        "newer:uglify:dev",
+        "newer:sass:dev"
+    ]
+}
