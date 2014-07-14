@@ -11,5 +11,10 @@
         "detectmobilebrowser",
         "newer:uglify:dev",
         "newer:sass:dev"
+    ],
+    "dist": [
+        "newer:copy:dist",
+        "newer:sass:dist",
+        "vendor:dist"
     ]
 }

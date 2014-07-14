@@ -1,4 +1,5 @@
 {
+    "_documentation": "https://github.com/gruntjs/grunt-contrib-uglify",
     "options": {
         "mangle": false,
         "preserveComments": "some"
@@ -8,11 +9,6 @@
             {"public/vendor/requirejs/require.min.js"          : ["public/vendor/requirejs/require.js"]},
             {"public/vendor/requirejs-plugins/src/json.min.js" : ["public/vendor/requirejs-plugins/src/json.js"]},
             {"public/vendor/requirejs-plugins/lib/text.min.js" : ["public/vendor/requirejs-plugins/lib/text.js"]}
-        ]
-    },
-    "dist": {
-        "files": [
-            {"public/vendor/requirejs/require.min.js" : ["public/vendor/requirejs/require.js"]}
         ]
     }
 }

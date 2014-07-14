@@ -1,4 +1,5 @@
 {
+    "_documentation": "https://github.com/gruntjs/grunt-contrib-sass",
     "options": {
         "precision": 10,
         "unixNewlines": true
@@ -21,7 +22,7 @@
             "expand": true,
             "cwd": "public/css/sass",
             "src": "**/*.scss",
-            "dest": "public/css",
+            "dest": "dist/css",
             "ext": ".css"
         }]
     }

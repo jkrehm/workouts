@@ -1,4 +1,5 @@
 {
+    "_documentation": "https://github.com/gruntjs/grunt-contrib-watch",
     "grunt": {
         "files": ["Gruntfile.js", "grunt/*"]
     },

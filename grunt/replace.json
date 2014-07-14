@@ -1,4 +1,5 @@
 {
+    "_documentation": "https://github.com/outaTiME/grunt-replace",
     "detectmobilebrowser": {
         "options": {
             "patterns": [
