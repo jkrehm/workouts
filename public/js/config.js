@@ -46,6 +46,9 @@ require.config({
         'detectmobilebrowser' : {
             deps : ['jquery'],
         },
+        'dropbox' : {
+            exports : 'Dropbox',
+        },
     },
 });
 
